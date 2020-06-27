@@ -1,0 +1,24 @@
+<div class="banner-index">
+  <div class="banner-text">
+    <h1>Welcome to Dr Cocktail</h1>
+    <p>A website with <%= Ingredient.count %> cocktails!</p>
+  </div>
+</div>
+
+<div class="grid-drinks">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-trip">
+      <%= image_tag "#{cocktail.name}", alt: "#{cocktail.name}" %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= cocktail.name %></h2>
+          <p>Short description here!</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="add-drink">
+    <p><%= link_to "Add Cocktail", new_cocktail_path %></p>
+  </div>
+</div>

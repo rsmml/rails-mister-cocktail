@@ -7,15 +7,17 @@ require 'open-uri'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# CLEANING DB
 puts 'Cleaning up DB'
 Ingredient.destroy_all
 puts 'Ingredients clen'
 
 puts 'Creating Some ingredients'
 
+# INGREDIENTS:
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 json = open(url).read
-
 ingredients = JSON.parse(json)
 
 ingredients['drinks'].each do |ingredient|
@@ -23,8 +25,19 @@ ingredients['drinks'].each do |ingredient|
   puts "Ingredient #{names.name} was added"
 end
 
-puts 'Done, ready to make some summer cocktails :) !!!'
+# COCKTAILS:
+url_cocktails = 'https://gist.githubusercontent.com/renandanton/8d99dab65bf9fb5b4465ded7ab73a7df/raw/2c5e0480bd239f76b055bb09f236f365e1530634/cocktails.json'
+json_cocktails = open(url_cocktails).read
+cocktails = JSON.parse(json_cocktails)
 
-# # Ingredient.create(name: "lemon")
-# # Ingredient.create(name: "ice")
-# # Ingredient.create(name: "mint leaves")
+list = []
+cocktails['cocktails'].each do |cocktail|
+  list << cocktail['name']
+end
+
+list.slice(0, 5).each do |name|
+  cocktail_name = Cocktail.create(name: name)
+  puts "Cocktail #{cocktail_name.name} was added"
+end
+
+puts 'Done, ready to make some summer cocktails :) !!!'

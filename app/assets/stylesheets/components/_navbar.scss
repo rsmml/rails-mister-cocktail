@@ -1,12 +1,12 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-container {
+  background-color: white;
+  box-shadow: 2px 0px 2px #F4F4F4;
+  font-family: 'Helvetica';
+  font-size: 36px;
+  a {
+    margin-left: 300px;
+    text-decoration: none;
+    transition: 0.3s;
+    text-align: center
+  }
 }

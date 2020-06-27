@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+body {
+  background-color: #F4F4F4;
+}
+
+.grid-drinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.add-drink {
+  background-color: rgba;
+  height: 300px;
+  width: 300px;
+}
