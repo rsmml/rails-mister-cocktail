@@ -11,6 +11,7 @@ require 'open-uri'
 # CLEANING DB
 puts 'Cleaning up DB'
 Ingredient.destroy_all
+Cocktail.destroy_all
 puts 'Ingredients clen'
 
 puts 'Creating Some ingredients'

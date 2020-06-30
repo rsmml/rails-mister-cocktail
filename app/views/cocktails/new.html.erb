@@ -1,5 +1,13 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Saufen!" %>
-<% end %>
+<div class="new-cocktail-form">
+  <%= simple_form_for @cocktail do |f| %>
+    <div class="simple-form-cocktail">
+      <div class="name-photo">
+        <%= f.input :name, class: 'name-input' %>
+        <%= f.input :photo, as: :file %>
+      </div>
+      <div class="btn-saufen">
+        <%= f.submit "Saufen", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

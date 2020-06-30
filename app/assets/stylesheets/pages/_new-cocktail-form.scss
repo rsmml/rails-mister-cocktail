@@ -1,0 +1,16 @@
+.new-cocktail-form {
+  margin: 24px 35%;
+}
+
+.name-input {
+  height: 70px;
+}
+
+.simple-form-cocktail {
+  display: flex;
+  flex-direction: column;
+  .btn-saufen {
+    margin: 12px auto;
+    border-radius: 12px;
+  }
+}

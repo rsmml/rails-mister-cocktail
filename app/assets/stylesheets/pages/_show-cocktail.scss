@@ -1,0 +1,32 @@
+.container-show-cocktail {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  img {
+    border-radius: 12px;
+    margin-right: 16px;
+  }
+}
+
+.show-cocktail-information {
+  width: 400px;
+  text-align: center
+}
+
+.doses-show-info {
+  margin-top: 16px;
+  width: 400px;
+  height: 400px;
+  background-color: #dbdbdb;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.doses-show-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2px;
+  margin: 24px;
+}
+

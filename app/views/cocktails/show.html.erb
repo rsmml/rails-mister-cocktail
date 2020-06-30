@@ -1,9 +1,15 @@
-<%= @cocktail.name %>
-
-<%= link_to "Add Doses", new_cocktail_dose_path(@cocktail) %>
-<% @cocktail.doses.each do |dose| %>
-  <%= link_to dose.ingredient.name, cocktail_dose_path(dose) %>
-  <%= link_to 'delete', dose_path(dose), method: :delete %>
-<% end %>
-
-
+<div class="container-show-cocktail">
+  <%= cl_image_tag @cocktail.photo.key, height: 500, wigth:500, crop: :fill %>
+  <div class="show-cocktail-information">
+    <h2><%= @cocktail.name %></h2>
+    <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <div class="doses-show-info">
+      <div class="doses-show-grid">
+        <% @cocktail.doses.each do |dose| %>
+          <p class="dose-name"><%= link_to dose.ingredient.name, cocktail_dose_path(dose) %></p>
+          <p class="dose-delete"><%= link_to 'D', dose_path(dose), method: :delete %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
