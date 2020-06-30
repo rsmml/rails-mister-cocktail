@@ -26,18 +26,18 @@ ingredients['drinks'].each do |ingredient|
 end
 
 # COCKTAILS:
-url_cocktails = 'https://gist.githubusercontent.com/renandanton/8d99dab65bf9fb5b4465ded7ab73a7df/raw/2c5e0480bd239f76b055bb09f236f365e1530634/cocktails.json'
-json_cocktails = open(url_cocktails).read
-cocktails = JSON.parse(json_cocktails)
+# url_cocktails = 'https://gist.githubusercontent.com/renandanton/8d99dab65bf9fb5b4465ded7ab73a7df/raw/2c5e0480bd239f76b055bb09f236f365e1530634/cocktails.json'
+# json_cocktails = open(url_cocktails).read
+# cocktails = JSON.parse(json_cocktails)
 
-list = []
-cocktails['cocktails'].each do |cocktail|
-  list << cocktail['name']
-end
+# list = []
+# cocktails['cocktails'].each do |cocktail|
+#   list << cocktail['name']
+# end
 
-list.slice(0, 5).each do |name|
-  cocktail_name = Cocktail.create(name: name)
-  puts "Cocktail #{cocktail_name.name} was added"
-end
+# list.slice(0, 5).each do |name|
+#   cocktail_name = Cocktail.create(name: name)
+#   puts "Cocktail #{cocktail_name.name} was added"
+# end
 
 puts 'Done, ready to make some summer cocktails :) !!!'

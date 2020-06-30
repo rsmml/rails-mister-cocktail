@@ -11,7 +11,7 @@
     <div class="card-container">
       <div class="drink-image">
         <%= link_to cocktail_path(cocktail) do %>
-          <%= image_tag "beer.png", alt: "beer" %>
+          <%= cl_image_tag cocktail.photo.key, height: 300, wigth:300, crop: :fill %>
         <% end %>
       </div>
       <div class="content-card">
