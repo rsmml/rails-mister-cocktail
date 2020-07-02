@@ -5,9 +5,16 @@
     <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
     <div class="doses-show-info">
       <div class="doses-show-grid">
+        <div class="title-show-grid">
+          <h5>Ingredients</h5>
+          <h5 style="margin-right: 150px">Doses</h5>
+        </div>
         <% @cocktail.doses.each do |dose| %>
-          <p class="dose-name"><%= link_to dose.ingredient.name, cocktail_dose_path(dose) %></p>
-          <p class="dose-delete"><%= link_to 'D', dose_path(dose), method: :delete %></p>
+        <div class="dose-card-show">
+          <p class="dose-name"><%= dose.ingredient.name %></p>
+          <p class="dose-name"><%= dose.description %></p>
+          <p class="dose-delete"><%= link_to '<i class="fa fa-trash"></i>'.html_safe, dose_path(dose), method: :delete %></p>
+        </div>
         <% end %>
       </div>
     </div>

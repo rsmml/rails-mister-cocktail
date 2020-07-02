@@ -1,4 +1,10 @@
 <div class="nav-container d-flex align-items-center justify-content-between">
     <%= link_to 'Dr. Cocktail', root_path %>
-    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    <div class="search-nav">
+      <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, input_html: {value: ""}, label: false %>
+      <% end %>
+    </div>
 </div>
+
+
