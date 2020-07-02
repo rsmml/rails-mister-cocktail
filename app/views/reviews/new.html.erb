@@ -1,0 +1,12 @@
+<div class="new-cocktail-form doses-show-info">
+  <%= simple_form_for [ @cocktail, @review ] do |f| %>
+    <div class="simple-form-cocktail">
+      <div class="name-photo">
+        <%= f.input :content %>
+      </div>
+      <div class="btn-saufen">
+        <%= f.submit "Add Review", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

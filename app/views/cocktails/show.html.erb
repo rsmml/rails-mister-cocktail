@@ -1,5 +1,9 @@
 <div class="container-show-cocktail">
-  <%= cl_image_tag @cocktail.photo.key, height: 500, wigth:500, crop: :fill %>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 500, wigth:500, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag 'aadedjdp46ke9tjpg7bs0y4f6s54', height: 500, wigth:500, crop: :fill %>
+  <% end %>
   <div class="show-cocktail-information">
     <h2><%= @cocktail.name %></h2>
     <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
@@ -20,3 +24,5 @@
     </div>
   </div>
 </div>
+
+
