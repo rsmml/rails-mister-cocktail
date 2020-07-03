@@ -36,3 +36,23 @@
   margin: 8px 45%;
   border-radius: 4px;
 }
+
+.title-show-with-review {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stars {
+  display: flex;
+  p {
+    margin-left: 8px;
+    vertical-align: center;
+    line-height: 1.3;
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}

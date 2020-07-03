@@ -1,0 +1,14 @@
+<% rating = [] %>
+<% @cocktail.reviews.each do |review| %>
+  <% rating << review.rating %>
+<% end %>
+<% prom = rating.sum.to_f / @cocktail.reviews.count %>
+<% if prom.nan? %>
+  <% puts "" %>
+<% else %>
+  <% prom.to_i.times do  %>
+    <i class="fas fa-star" style="color: #ffa931"></i>
+  <% end %>
+  <%= prom.round(1) %>
+  <p>(<%= @cocktail.reviews.count %>) reviews</p>
+<% end %>

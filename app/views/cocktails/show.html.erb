@@ -5,8 +5,16 @@
     <%= cl_image_tag 'aadedjdp46ke9tjpg7bs0y4f6s54', height: 500, wigth:500, crop: :fill %>
   <% end %>
   <div class="show-cocktail-information">
-    <h2><%= @cocktail.name %></h2>
-    <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <div class="title-show-with-review">
+      <h2><%= @cocktail.name %></h2>
+      <div class="stars">
+        <%= render 'shared/review' %>
+      </div>
+    </div>
+    <div class="btns">
+      <%= link_to "Add Doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+      <%= link_to "Add Review", new_cocktail_review_path(@cocktail), class: "btn btn-primary" %>
+    </div>
     <div class="doses-show-info">
       <div class="doses-show-grid">
         <div class="title-show-grid">
@@ -25,12 +33,21 @@
   </div>
 </div>
 
-<div class="review">
+<div class="review-show">
   <% @cocktail.reviews.each do |review| %>
-    <ul>
+    <ul style="list-style: none;">
       <li>
-        <%= review.content %>
+        <div class="review-content">
+          <%= review.content %>
+          <div class="stars">
+            <% review.rating.to_i.times do  %>
+              <i class="fas fa-star" style="color: #ffa931"></i>
+            <% end %>
+          </div>
+        </div>
       </li>
     </ul>
   <% end %>
 </div>
+
+
