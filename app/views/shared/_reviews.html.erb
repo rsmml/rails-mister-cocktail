@@ -1,0 +1,15 @@
+<% @cocktails.each do |cocktail| %>s
+  <% reviews = cocktail.reviews %>
+    <% if cocktail.reviews.count != 0 %>
+      <% rating = [] %>
+      <% reviews.each do |review| %>
+        <% rating << review.rating %>
+      <% end %>
+      <% prom = (rating.sum.to_f / cocktail.reviews.count) %>
+      <%= prom %>
+    <% else %>
+      <% puts " " %>
+    <% end %>
+<% end %>
+
+
