@@ -21,6 +21,7 @@
       <div class="content-card">
         <div class="drink-title">
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          <!-- <p><%#= render 'shared/reviews' %></p> -->
         </div>
         <div class="doses-grid">
           <% cocktail.doses.each do |dose| %>
@@ -31,4 +32,3 @@
     </div>
   <% end %>
 </div>
-
