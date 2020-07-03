@@ -1,16 +1,14 @@
-<% @cocktails.each do |cocktail| %>
-  <% reviews = cocktail.reviews %>
-  <% rating = [] %>
-  <% reviews.each do |review| %>
-    <% rating << review.rating %>
-  <% end %>
-  <% rating %>
-  <% if rating.sum == 0 %>
-    <%= puts "No reviews yet" %>
-  <% else %>
-    <% prom = rating.sum / cocktail.reviews.count %>
-    <% prom.to_i.times do  %>
-      <i class="fas fa-star" style="color: #ffa931"></i>
-    <% end %>
+<% reviews = cocktail.reviews %>
+<% rating = [] %>
+<% reviews.each do |review| %>
+  <% rating << review.rating %>
+<% end %>
+<% rating %>
+<% if rating.sum == 0 %>
+  <%= puts "No reviews yet" %>
+<% else %>
+  <% prom = rating.sum / cocktail.reviews.count %>
+  <% prom.to_i.times do  %>
+    <i class="fas fa-star" style="color: #ffa931"></i>
   <% end %>
 <% end %>

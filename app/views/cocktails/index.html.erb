@@ -21,7 +21,22 @@
       <div class="content-card">
         <div class="drink-title">
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-          <!-- <p><%#= render 'shared/reviews' %></p> -->
+          <div class="stars-index">
+            <% reviews = cocktail.reviews %>
+            <% rating = [] %>
+            <% reviews.each do |review| %>
+              <% rating << review.rating %>
+            <% end %>
+            <% rating %>
+            <% if rating.sum == 0 %>
+              <%= puts "No reviews yet" %>
+            <% else %>
+              <% prom = rating.sum / cocktail.reviews.count %>
+              <% prom.to_i.times do  %>
+                <i class="fas fa-star" style="color: #ffa931; font-size: 9px"></i>
+              <% end %>
+            <% end %>
+          </div>
         </div>
         <div class="doses-grid">
           <% cocktail.doses.each do |dose| %>
