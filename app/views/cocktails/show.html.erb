@@ -25,4 +25,12 @@
   </div>
 </div>
 
-
+<div class="review">
+  <% @cocktail.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= review.content %>
+      </li>
+    </ul>
+  <% end %>
+</div>
